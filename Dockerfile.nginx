@@ -1,0 +1,3 @@
+FROM ngucandy/rtmp-hls@sha256:c9c4477476544b8c338d19fe6f1cddaeeed970e0d747b388a58a00e930d771be
+
+COPY nginx.conf /etc/nginx/nginx.conf

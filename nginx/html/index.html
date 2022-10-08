@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HLS Live Streaming</title>
+		<link href="./style.css" rel="stylesheet" >
+		<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
+		<script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+	</head>
+	<body>
+		<ul>
+			<li1>
+				<video id="player" class="video-js vjs-default-skin" width="450" autoplay muted preload="auto">
+				<source src="http://ubuntu.local:8080/hls/test.m3u8" type="application/x-mpegURL" />
+				</video>
+				<video id="player2" class="video-js vjs-default-skin" width="450" autoplay muted preload="auto">
+					<source src="http://ubuntu.local:8080/hls/test2.m3u8" type="application/x-mpegURL" />
+				</video>
+				<div class="cross-layout">
+					<button class="position-top btn cross-key-btn" onclick="ButtonAction('up')"><span class="top-mark">▲</span></button>
+					<button class="position-left btn cross-key-btn" onclick="ButtonAction('left')"><span class="left-mark">▲</span></button>
+					<button class="position-right btn cross-key-btn" onclick="ButtonAction('right')""><span class="right-mark">▲</span></button>
+					<button class="position-bottom btn cross-key-btn" onclick="ButtonAction('down')""><span class="bottom-mark">▲</span></button>
+				</div>
+			</li1>
+			<li2>
+			<div class="container">
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=10" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=9" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=4" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=2" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=8" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=3" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=5" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+				<div class="grid-item">
+					<iframe src="http://ubuntu.local:3000/d-solo/5M2Dwa44k/baby_sense?orgId=1&refresh=5s&panelId=7" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+			<div>
+			</li2>
+		</ul>
+	</body>
+	<script>
+			var player = videojs('#player');
+			var player = videojs('#player2');
+
+			function ButtonAction(direction) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						alert(this.responseText);
+					}
+				};
+				xhttp.open("POST", "http://ubuntu.local:4000/servo/" + direction, true);
+				// xhttp.setRequestHeader("Content-type", "application/json");
+				xhttp.send("");
+			}
+
+	</script>
+</html>

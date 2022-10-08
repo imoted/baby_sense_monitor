@@ -1,0 +1,31 @@
+version: "3"
+services:
+  influxdb:
+    image: hypriot/rpi-influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb/data:/data
+  grafana:
+    build:
+      context: .
+      dockerfile: Dockerfile.grafana
+    image: grafana/grafana
+    user: "${UID}:${GID}"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/data:/var/lib/grafana
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    image: rtmp-hls
+    ports:
+      - "1935:1935"
+      - "8080:8080"
+      - "8088:8088"
+    volumes:
+      - ./nginx/html:/usr/local/nginx/html
+    # depends_on:
+      # - grafana

@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    /* grid-template-columns: 260px 200px 200px; */
+    grid-template-rows: 200px 200px 200px 200px;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-item {
+    background-color: rgb(202, 187, 187);
+    text-align: center;
+}
+
+
+.btn {
+    text-align: center;
+    cursor: pointer;
+    font-size: 36px;
+}
+
+.cross-layout {
+    display: grid;
+    top: 0%;
+    left: 25%;
+    position: relative;
+    grid-template-columns: 70px 70px 70px;
+    grid-template-rows: 70px 70px 70px;
+}
+
+.cross-layout .position-top {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.cross-layout .position-left {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+.cross-layout .position-center {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.cross-layout .position-right {
+    grid-row: 2 / 3;
+    grid-column: 3/4;
+}
+
+.cross-layout .position-bottom {
+    grid-row: 3 / 4;
+    grid-column: 2/3;
+}
+
+/**　コントローラーの左側_十字キー**/
+
+.cross-key-btn {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(66, 86, 123, 0.5);
+}
+
+.left-mark {
+    display: block;
+    transform: rotate(-90deg);
+}
+
+.right-mark {
+    display: block;
+    transform: rotate(90deg);
+}
+
+.bottom-mark {
+    display: block;
+    transform: rotate(180deg);
+}
+
+ul{
+   display:flex;
+   flex-wrap:wrap;
+   list-style:none;
+   height:800px;
+   margin:0;
+   padding:0;
+ }
+ li1{
+   width:450px;
+   margin:0.1%;
+   /* line-height:170px; */
+   background:#c3c3c3;
+   text-align:center;
+ }
+  li2{
+   width:calc(100% - 460px);
+   margin:0.1%;
+   /* height:1000px; */
+   /* line-height:170px; */
+   background:#c3c3c3;
+   text-align:center;
+ }
