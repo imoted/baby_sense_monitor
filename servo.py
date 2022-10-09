@@ -54,8 +54,8 @@ class BaseJoint:
 class AngleJoint:
     def __init__(self):
         self.servo = ServoCtrl(12)
-        self.servo.set_angle(45)
-        self.angle = 45
+        self.servo.set_angle(95)
+        self.angle = 95
 
     def step_angle(self, direction):
         if direction == "up":
