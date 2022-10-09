@@ -48,7 +48,7 @@ class UploadToInfluxDB:
                     "Bed Movement": self.mpu_data,
                     # "Thermal Camera": self.thermal_cam_data[0],
                     "Thermal Camera Max": self.thermal_cam_data[1],
-                    # "Thermal Camera Min": self.thermal_cam_data[2]
+                    "Thermal Camera Min": self.thermal_cam_data[2]
                 },
             }
         ]
