@@ -135,7 +135,7 @@ int main()
 
   int bitrate = 500000;
 
-  streamer::StreamerConfig streamer_config(80, 60, 80, 60, 25, bitrate, "main", "rtmp://localhost/live/test");
+  streamer::StreamerConfig streamer_config(80, 60, 80, 60, 13, bitrate, "main", "rtmp://localhost/live/test");
 
   streamer_.enable_av_debug_log();
   streamer_.init(streamer_config);
