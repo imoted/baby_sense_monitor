@@ -9,7 +9,7 @@ Thermal camera(Lepton)/HLS/nginx/influxDB/grafana/enviroment sensor(Omron)/accel
 
 # Features
 
-* HLSによるリアルタイムでのIR camera/Thermal camera(Lepton)の動画配信
+* HLSによるリアルタイムでの camera/Thermal camera(Lepton)の動画配信
   * camera画像をRTMPでNginxサーバーに送信
   * 画像内最大温度と、中心温度の保存と配信
 * Omron の環境センサ、thermal camera の温度情報、accelerometer (MPU6050)のinfluxDBへの保存、grafanaでのリアルタイムプロット
@@ -21,10 +21,12 @@ Thermal camera(Lepton)/HLS/nginx/influxDB/grafana/enviroment sensor(Omron)/accel
   * PWMを使用できること
 * Lepton pure thermal 1(PT1)
   * https://groupgets.com/manufacturers/getlab/products/purethermal-1-flir-lepton-smart-i-o-module
-* IR camera
+* camera
   * any vendor
 * Omron enviroment sensor (2JCIE-BU01(F1))
   * https://amzn.asia/d/2eTEef1
+* 加速度センサ
+  * MPU6050
 * PWMで角度調整できるサーボモーター 2個
   * such as SG90
   * PWM 12を高さ調整用servoに接続する
@@ -75,12 +77,12 @@ indluxDBへの接続とdashboardを作成する。(Baby_sense-1671418851290.json
 ./start_container.sh
 ```
 
-* IR cameraをffmpegにてRTMP serverへの転送
+* camera画像をffmpegにてRTMP serverへの転送
 ```bash
 ./start_ffmpeg.sh
 ```
 
-* Thermal camera / REST API server / influxDBへのアップロードモジュールの起動
+* Thermal camera / REST API server / 加速度センサドライバ / 環境センサドライバ / influxDBへのアップロードモジュールの起動
 ```bash
 ./start.sh
 ```
