@@ -64,7 +64,7 @@ sudo cp /path/to/repo/99-pt1.rules /etc/udev/rules.d/
 
 * grafanaのグラフの準備
 localhost:3000にアクセスして (標準ではID admin/Pass admin )
-dashboardを作成する。(Baby_sense-1671418851290.jsonなどを、インポート等)
+indluxDBへの接続とdashboardを作成する。(Baby_sense-1671418851290.jsonなどを、インポート等)
 
 * software内のUVCのvideo番号を使用するデバイスに合わせる
 
